@@ -106,6 +106,17 @@ const saturn = new THREE.Mesh(
 scene.add(saturn);
 saturn.position.set(420,0,-400);
 
+const saturnRingTexture = new THREE.TextureLoader().load('images/saturnring.jpg');
+const saturnRing = new THREE.Mesh(
+    new THREE.TorusGeometry(24, 2, 25, 50),
+    new THREE.MeshBasicMaterial( {
+        color: 0x5C4033,
+    })
+)
+scene.add(saturnRing)
+saturnRing.position.set(420,0,-400);
+saturnRing.rotateX( -70 );
+
 const uranusTexture = new THREE.TextureLoader().load('images/uranus.jpg');
 const uranus = new THREE.Mesh(
     new THREE.SphereGeometry(17,24,24),
