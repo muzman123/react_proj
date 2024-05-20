@@ -141,7 +141,7 @@ const light = new THREE.PointLight(0xffffff,1000);
 light.position.set(4,5,1)
 scene.add(light);
 
-const ambientLight = new THREE.AmbientLight(0xffffff,1);
+const ambientLight = new THREE.AmbientLight(0xffffff, 2);
 scene.add(ambientLight);
 
 camera.position.z = 10;
@@ -153,6 +153,36 @@ function animate() {
 
 	cam.rotation.x += 0.01;
 	cam.rotation.y += 0.01;
+
+    sun.rotation.x += 0.0001;
+    sun.rotation.y += 0.0001;
+    
+    earth.rotation.x += 0.005;
+    earth.rotation.y += 0.005;
+
+    mercury.rotation.x += 0.018;
+    mercury.rotation.y += 0.018;
+
+    venus.rotation.x += 0.007;
+    venus.rotation.y += 0.007;
+    
+    mars.rotation.x += 0.005;
+    mars.rotation.y += 0.005;
+
+    saturn.rotation.x += 0.0015;
+    saturn.rotation.y += 0.0015;
+
+    saturnRing.rotation.z += 0.0015;
+    saturnRing.rotation.y += 0.00015;
+
+    uranus.rotation.x += 0.001;
+    uranus.rotation.y += 0.001;
+
+    neptune.rotation.x += 0.001;
+    neptune.rotation.y += 0.001;
+
+    jupiter.rotation.x += 0.001;
+    jupiter.rotation.y += 0.001;
 
     cam.position.x = camera.position.x;
 
@@ -176,7 +206,7 @@ document.body.onscroll = updateCamera;
 updateCamera();
 
 function addStar() {
-    const geometry = new THREE.SphereGeometry(0.25,24,24);
+    const geometry = new THREE.SphereGeometry(0.15,24,24);
     const material = new THREE.MeshStandardMaterial({color: 0xffffff})
     const star = new THREE.Mesh(geometry, material);
 

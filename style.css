@@ -14,7 +14,6 @@ canvas {
 }
 
 section {
-    display: grid;
     font-family: "Star Wars";
     color: yellow;
     place-items: center;
@@ -22,14 +21,18 @@ section {
     min-height: 100vh;
 }
 
+.grid-container {
+    display: grid;
+    column-gap: 200px;
+}
+
 .hidden {
+    grid-column: 2;
+    grid-column-end: 3;
     opacity: 0;
-    transform: translateX(-100%);
     transition: all 1s;
 }
 
 .show {
     opacity: 1;
-    transform: translateX(0);
-
 }
